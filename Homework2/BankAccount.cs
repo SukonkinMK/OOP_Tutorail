@@ -24,23 +24,33 @@ public class BankAccount
     public int Id
     {
         get { return id; }
-        set 
-        { 
-            id = CreateAccountId();
-        }
     }
     public decimal Balance
     {
         get { return balance; }
-        set { balance = value; }
     }
     public Account_Type AccountType
     {
         get { return accountType; }
-        set { accountType = value; }
     }
     public override string ToString()
     {
         return $"Account № {Id}; balance: {Balance}$; type: {AccountType}";
+    }
+
+    public BankAccount() : this(0M, Account_Type.Base)
+    {
+    }
+    public BankAccount(decimal balance): this(balance, Account_Type.Base)
+    {
+    }
+    public BankAccount(Account_Type type): this(0M, type)
+    {
+    }
+    public BankAccount(decimal balance, Account_Type type)
+    {
+        id = CreateAccountId();
+        this.balance = balance;
+        this.accountType = type;
     }
 }
