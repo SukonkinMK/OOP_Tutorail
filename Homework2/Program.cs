@@ -1,2 +1,8 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using Homework2;
+
+BankAccount bankAccount = new BankAccount();
+bankAccount.Id = 1;
+bankAccount.Balance = 10.50M;
+bankAccount.AccountType = Account_Type.Platinum;
+Console.WriteLine(bankAccount);
+Console.ReadLine();
