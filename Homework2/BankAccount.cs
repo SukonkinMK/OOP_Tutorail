@@ -9,6 +9,14 @@ public enum Account_Type {
 
 public class BankAccount
 {
+    static int CurrentAmountOfAccouts = 1;
+    static int CreateAccountId()
+    {
+        int id = CurrentAmountOfAccouts;
+        CurrentAmountOfAccouts++;
+        return id;
+    }
+
     private int id;
     private decimal balance;
     private Account_Type accountType;
@@ -16,7 +24,10 @@ public class BankAccount
     public int Id
     {
         get { return id; }
-        set { id = value; }
+        set 
+        { 
+            id = CreateAccountId();
+        }
     }
     public decimal Balance
     {
