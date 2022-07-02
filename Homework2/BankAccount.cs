@@ -53,4 +53,30 @@ public class BankAccount
         this.balance = balance;
         this.accountType = type;
     }
+
+    /// <summary>
+    /// Пополнение баланса банковского счета
+    /// </summary>
+    /// <param name="sum">сумма пополнения</param>
+    public void AddMoney(decimal sum)
+    {
+        balance += sum;
+    }
+
+    /// <summary>
+    /// Снятие с банковского счета
+    /// </summary>
+    /// <param name="sum">запрашиваемая сумма</param>
+    public void PullOfMoney(decimal sum)
+    {
+        if(sum <= balance)
+        {
+            Console.WriteLine($"Снятие со счета {sum}$ прошло успешно");
+            balance -= sum;
+        }
+        else
+        {
+            Console.WriteLine("Ошибка. На счете недостаточно средств");
+        }
+    }
 }

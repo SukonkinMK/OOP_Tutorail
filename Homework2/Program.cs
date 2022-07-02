@@ -9,4 +9,11 @@ Console.WriteLine(bankAccount2);
 Console.WriteLine(bankAccount3);
 Console.WriteLine(bankAccount4);
 
+Console.WriteLine();
+bankAccount4.AddMoney(20M);
+Console.WriteLine(bankAccount4);
+bankAccount4.PullOfMoney(50M);
+bankAccount4.PullOfMoney(30M);
+Console.WriteLine(bankAccount4);
+
 Console.ReadLine();
