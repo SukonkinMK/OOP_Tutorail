@@ -20,4 +20,22 @@ bankAccount4.AddMoney(20M);
 bool result1 = bankAccount3.Transfer(bankAccount4, 20M);
 bool result2 = bankAccount3.Transfer(bankAccount4, 20M);
 
+
+string str1 = "Hello World!";
+Console.WriteLine("Before: {0}, after {1}", str1, Reverse(str1));
+
 Console.ReadLine();
+
+
+static string Reverse(string input)
+{
+    char[] chars = input.ToCharArray();
+    for (int i = 0; i < chars.Length / 2; i++)
+    {
+        char tmp;
+        tmp = chars[i];
+        chars[i] = chars[chars.Length - 1 - i];
+        chars[chars.Length - 1 - i] = tmp;
+    }
+    return new string(chars);
+}
