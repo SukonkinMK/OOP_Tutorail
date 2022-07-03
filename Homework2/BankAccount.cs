@@ -79,4 +79,17 @@ public class BankAccount
             Console.WriteLine("Ошибка. На счете недостаточно средств");
         }
     }
+    public bool Transfer(BankAccount account, decimal sum)
+    {
+        if(account.Balance < sum)
+        {
+            return false;
+        }
+        else
+        {
+            account.PullOfMoney(sum);
+            this.AddMoney(sum);
+            return true;
+        }
+    }
 }

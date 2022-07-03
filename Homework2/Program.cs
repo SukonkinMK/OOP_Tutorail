@@ -11,9 +11,13 @@ Console.WriteLine(bankAccount4);
 
 Console.WriteLine();
 bankAccount4.AddMoney(20M);
-Console.WriteLine(bankAccount4);
-bankAccount4.PullOfMoney(50M);
-bankAccount4.PullOfMoney(30M);
-Console.WriteLine(bankAccount4);
+//Console.WriteLine(bankAccount4);
+//bankAccount4.PullOfMoney(50M);
+//bankAccount4.PullOfMoney(30M);
+//Console.WriteLine(bankAccount4);
+
+
+bool result1 = bankAccount3.Transfer(bankAccount4, 20M);
+bool result2 = bankAccount3.Transfer(bankAccount4, 20M);
 
 Console.ReadLine();
