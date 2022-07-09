@@ -1,4 +1,4 @@
-﻿namespace Homework4;
+﻿namespace ClassLibraryBuildings;
 
 public class Building
 {
@@ -56,5 +56,9 @@ public class Building
         this.NumberOfFloors = floors;
         this.NumberOfFlats = flats;
         this.NumberOfEntrances = entrances;
+    }
+    public string BuildingInfo()
+    {
+        return $"Дом № {this.Id}, Высота = {this.Height}, Этажей = {this.NumberOfFloors}, Квартир = {this.NumberOfFlats}, Подъездов = {this.NumberOfEntrances}";
     }
 }

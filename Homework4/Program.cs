@@ -1,12 +1,18 @@
-﻿using Homework4;
+﻿using ClassLibraryBuildings;
 
-Building building1 = new Building();
-Building building2 = new Building(30,9,180,5);
-
-//тест фабрики
+Dictionary<int, Building> buildings = Creator.GetCreatedBuildings();
 Creator.CreateBuild();
 Creator.CreateBuild(30, 9, 180, 5);
-Dictionary<int, Building> buildings = Creator.GetCreatedBuildings();
-Creator.RemoveBuild(4);
+foreach(var item in buildings)
+{
+    Console.WriteLine($"{item.Key} - {item.Value.BuildingInfo()}");
+}
+Console.WriteLine("Удаляем дом №2");
+Creator.RemoveBuild(2);
+foreach (var item in buildings)
+{
+    Console.WriteLine($"{item.Key} - {item.Value.BuildingInfo()}");
+}
+
 
 Console.ReadLine();
