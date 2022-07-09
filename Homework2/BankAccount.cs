@@ -9,8 +9,8 @@ public enum Account_Type {
 
 public class BankAccount
 {
-    static int CurrentAmountOfAccouts = 1;
-    static int CreateAccountId()
+    private static int CurrentAmountOfAccouts = 1;
+    private static int CreateAccountId()
     {
         int id = CurrentAmountOfAccouts;
         CurrentAmountOfAccouts++;
@@ -67,16 +67,26 @@ public class BankAccount
     /// Снятие с банковского счета
     /// </summary>
     /// <param name="sum">запрашиваемая сумма</param>
-    public void PullOfMoney(decimal sum)
+    public bool PullOfMoney(decimal sum)
     {
         if(sum <= balance)
         {
-            Console.WriteLine($"Снятие со счета {sum}$ прошло успешно");
             balance -= sum;
+            return true;
+        }
+        return false;
+    }
+    public bool Transfer(BankAccount account, decimal sum)
+    {
+        if(account.Balance < sum)
+        {
+            return false;
         }
         else
         {
-            Console.WriteLine("Ошибка. На счете недостаточно средств");
+            account.PullOfMoney(sum);
+            this.AddMoney(sum);
+            return true;
         }
     }
 }
