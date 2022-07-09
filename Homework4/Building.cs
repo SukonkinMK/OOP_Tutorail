@@ -2,7 +2,7 @@
 
 public class Building
 {
-    static int CurrentAmountOfBuildings = 0;
+    private static int CurrentAmountOfBuildings = 0;
 
     /// <summary>
     /// Подсчет уникального номера зданий
@@ -47,9 +47,9 @@ public class Building
         return FlatsInEntrance() / this.NumberOfFloors;
     }
 
-    public Building() : this(3, 1, 1, 1) { }
+    internal Building() : this(3, 1, 1, 1) { }
 
-    public Building(int heigth, int floors, int flats, int entrances)
+    internal Building(int heigth, int floors, int flats, int entrances)
     {
         this.Id = IncreaseBuildingNumber();
         this.Height = heigth;
