@@ -105,6 +105,14 @@ public class SimpleFractions
     }
     public static SimpleFractions operator /(SimpleFractions lhs, SimpleFractions rhs)
     {
+        if (rhs.Numerator == 0)
+            throw new ArgumentException("происходит деление на 0");
         return new SimpleFractions(lhs.Numerator * rhs.Denominator, rhs.Numerator * lhs.Denominator);
+    }
+    public static int operator %(SimpleFractions lhs, SimpleFractions rhs)
+    {
+        if (rhs.Numerator == 0)
+            throw new ArgumentException("происходит деление на 0");
+        return (lhs.Numerator * rhs.Denominator) % (rhs.Numerator * lhs.Denominator);
     }
 }
