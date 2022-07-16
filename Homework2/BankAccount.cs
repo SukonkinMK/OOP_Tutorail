@@ -89,4 +89,36 @@ public class BankAccount
             return true;
         }
     }
+
+    public static bool operator ==(BankAccount lhs, BankAccount rhs)
+    {
+        return lhs.Balance == rhs.Balance && lhs.AccountType == rhs.AccountType;
+    }
+
+    public static bool operator !=(BankAccount lhs, BankAccount rhs)
+    {
+        return !(lhs == rhs);
+    }
+
+    public override bool Equals(object? obj)
+    {
+        if (obj is null)
+            return false;
+        if(obj.GetType() != typeof(BankAccount))
+            return false;
+        BankAccount other = (BankAccount)obj;
+        return other.Balance == this.Balance && other.AccountType == this.AccountType;
+    }
+    public override int GetHashCode()
+    {
+        var hash = 0x18d;
+
+        unchecked
+        {
+            hash = (hash * 0x18d) ^ Balance.GetHashCode();
+            hash = (hash * 0x18d) ^ AccountType.GetHashCode();
+        }
+        
+        return hash;
+    }
 }
