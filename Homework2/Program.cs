@@ -32,7 +32,7 @@ string inputPath = Path.Combine(path, inputFile);
 string outputPath = Path.Combine(path, outputFile);
 if (File.Exists(inputPath))
 {
-    StreamReader stream = new StreamReader(inputPath);
+    using StreamReader stream = new StreamReader(inputPath);
     while (!stream.EndOfStream)
     {
         string inputLine = stream.ReadLine();
@@ -53,7 +53,11 @@ else
     Console.WriteLine("Не удалось открыть файл {0}", inputPath);
 }
 
-
+BankAccount bank1 = new BankAccount(17.50M, Account_Type.Base);
+BankAccount bank2 = new BankAccount(17.50M, Account_Type.Base);
+Console.WriteLine(Equals(bank2, bank1));
+Console.WriteLine(bank1 == bank2);
+Console.WriteLine($"Hash1 = {bank1.GetHashCode()}, Hash2 = {bank2.GetHashCode()}");
 
 Console.ReadLine();
 
