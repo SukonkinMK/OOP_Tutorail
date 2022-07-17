@@ -1,6 +1,6 @@
 ﻿namespace Homework6;
 
-public class Figure
+public abstract class Figure : IFigure
 { 
     private string _color;
     private bool _visibility;
@@ -20,18 +20,16 @@ public class Figure
     /// </summary>
     /// <param name="distance">Величина сдвига</param>
     /// <param name="direction">Направление сдвига</param>
-    public virtual void Move(double distance, Direction direction)
-    {}
+    public abstract void Move(double distance, Direction direction);
 
     public void ChangeColor(string color)
     {
         this._color = color;
     }
 
-    public virtual void Print()
-    {
-        Console.WriteLine($"color: {_color}, visibility: {Visibility}");
-    }
+    public abstract void Print();
+
+    public abstract double Square();
 
     public Figure() : this("black", true) { }
 
@@ -40,5 +38,4 @@ public class Figure
         _color = color;
         _visibility = visibility;
     }
-
 }

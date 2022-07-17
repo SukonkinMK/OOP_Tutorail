@@ -13,7 +13,7 @@ public class Circle : Point
         _radius = radius;
     }
 
-    public double Square()
+    public override double Square()
     {
         return _radius * _radius * pi;
     }

@@ -12,7 +12,7 @@ public class Rectangle : Point
         _height = height;
         _width = width;
     }
-    public double Square()
+    public override double Square()
     {
         return _height * _width;
     }
