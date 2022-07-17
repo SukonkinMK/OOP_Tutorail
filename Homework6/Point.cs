@@ -52,4 +52,9 @@ public class Point : Figure
     {
         Console.WriteLine($"Position: ({_coordinateX},{_coordinateY}), color: {Color}, visibility: {Visibility}");
     }
+
+    public override double Square()
+    {
+        return 0;
+    }
 }

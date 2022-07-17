@@ -1,9 +1,9 @@
 ﻿using Homework6;
 
-Figure f1 = new Figure();
-Figure f2 = new Figure("red", false);
-f1.Print();
-f2.Print();
+//Figure f1 = new Figure();
+//Figure f2 = new Figure("red", false);
+//f1.Print();
+//f2.Print();
 
 Point p1 = new Point();
 Point p2 = new Point(5, 5, "red", true);
